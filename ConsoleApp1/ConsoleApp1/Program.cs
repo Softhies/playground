@@ -26,7 +26,7 @@ namespace ConsoleApp1
             Console.Write("me: ");
             Console.ForegroundColor = ConsoleColor.Green;
 
-            FuncChat(Console.ReadLine());
+            FuncsChat(Console.ReadLine());
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("press key for exit");
@@ -39,7 +39,7 @@ namespace ConsoleApp1
                 return;
 
             var client = new RestClient($"http://api.brainshop.ai/get?bid=172504&key=pa89bj8G5EzeFHjk&uid=12345&msg={message}");
-            var request = new RestRequest();
+            var request = new RestRequest("update");
             var response = client.Execute(request);
             if (response != null && response.StatusCode == System.Net.HttpStatusCode.OK)
             {
